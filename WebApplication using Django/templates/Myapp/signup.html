@@ -1,0 +1,186 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+</head>
+<body>
+    <div  style="background-color:lightsteelblue; margin-left: 35%; margin-right: 35%; padding-top: 2%; padding-bottom: 2%; margin-top: 5%;">
+    <center>
+    <h2>Public Profile</h2>
+    <h4>Add information about yourself</h54>
+
+<br><br>
+    <form action="{% url 'signup' %}" method="post">
+        {% csrf_token %}
+        
+        <label for="">Username :</label>
+        <input type="text" id="username" name="username" placeholder="Create your Username" required> <br><br>
+        <label for="">First Name :</label>
+        <input type="text" id="fname" name="fname" placeholder="Enter your First name" required><br><br>
+        <label for="">Last Name:</label>
+        <input type="text" id="lname" name="lname" placeholder="Enter your Last Name" required><br><br>
+        <label for="">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your Email" required><br><br>
+        <label for="">Password:</label>
+        <input type="password" id="pass1" name="pass1" placeholder="Enter your Password" required><br><br>
+        <label for="">Confirm Password:</label>
+        <input type="password" id="pass2" name="pass2" placeholder="Confirm Password" required><br><br>
+        <input  type="checkbox" required> <span style="font-size: 12px;  padding-right: 10px;">I have read and agree to the Privacy Policy."</span> <br>
+        <span style="font-size: 12px; padding-left: 40px; padding-right: 40px;">  Check this box to indicate that you have read and agree to our </span> <br> <span style="font-size: 12px; padding-left: 40px; padding-right: 40px;">Privacy Policy, outlining how we handle your data.</span>
+        <br><br>
+        <button type="submit">Sign Up</button>
+    </form>
+
+
+                                       
+      
+    <script>
+        function validateForm() {
+          var checkbox = document.getElementById("agreeCheckbox");
+          var errorMessage = document.getElementById("error-message");
+      
+          if (!checkbox.checked) {
+            errorMessage.innerHTML = "Please agree to the terms and conditions.";
+            return false; // Prevent form submission
+          } else {
+            errorMessage.innerHTML = ""; // Clear error message
+            return true; // Allow form submission
+          }
+        }
+      </script>
+</center>
+</div>
+</body>
+</html>
+
+
+ -->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Signup Page</title>
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+     <style>
+         body {
+             background-color: #f8f9fa;
+         }
+ 
+         .signup-container {
+             background-color: #ffffff;
+             padding: 0.5% 2% 0.5% 2%;
+             /* margin: 5% auto; */
+             max-width: 500px;
+             /* height: 1000px; */
+             border-radius: 10px;
+             margin-left: 29%;
+             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+         }
+ 
+         h3, h4 {
+             text-align: center;
+         }
+ 
+         form {
+             padding: 10px 15px;
+         }
+ 
+         label {
+            font-weight: bold; 
+         }
+ 
+         input {
+             width: 100%;
+             padding: 8px;
+             margin-bottom: 15px;
+             border: 1px solid #ced4da;
+             border-radius: 4px;
+             box-sizing: border-box;
+         }
+ 
+         button {
+             background-color: #007bff;
+             color: #fff;
+             padding: 10px 20px;
+             border: none;
+             border-radius: 4px;
+             cursor: pointer;
+             width: 100%;
+         }
+ 
+         button:hover {
+             background-color: #0056b3;
+         }
+ 
+         .checkbox-container {
+             font-size: 12px;
+             text-align: center; 
+             margin-top: 4px;
+         }
+     </style>
+ </head>
+ <body>
+     <div class="container">
+         <div class="signup-container">
+             <!-- <h3>Public Profile</h3> -->
+             <h4 class="text-primary">Add information about yourself</h4>
+ 
+             <form action="{% url 'signup' %}" method="post">
+                 {% csrf_token %}
+                 <div class="form-group">
+                     <label for="username">Username :</label>
+                     <input type="text" id="username" name="username" class="form-control" placeholder="Create your Username" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="fname">First Name :</label>
+                     <input type="text" id="fname" name="fname" class="form-control" placeholder="Enter your First name" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="lname">Last Name:</label>
+                     <input type="text" id="lname" name="lname" class="form-control" placeholder="Enter your Last Name" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="email">Email:</label>
+                     <input type="email" id="email" name="email" class="form-control" placeholder="Enter your Email" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="pass1">Password:</label>
+                     <input type="password" id="pass1" name="pass1" class="form-control" placeholder="Enter your Password" required>
+                 </div>
+                 <div class="form-group">
+                     <label for="pass2">Confirm Password:</label>
+                     <input type="password" id="pass2" name="pass2" class="form-control" placeholder="Confirm Password" required>
+                 </div>
+                 <div class="form-group">
+                  
+                     <input style="margin-left: -175px;" type="checkbox" id="agreeCheckbox" required>
+                     <center>
+                     <span style="font-size: 12px; margin-left: -200px;" for="agreeCheckbox" > <h6 style="margin-top: -55px;">I have read and agree to the Privacy Policy. </h6></span> <br>
+                     
+                     <span style="font-size: 12px;"><p style="margin-top: -30px;">Check this box to indicate that you have read and agree to our Privacy Policy, outlining how we handle your data.</p></span>
+                    </center>
+                 </div>
+                 <!-- <div style="margin-top: -28px;" class="checkbox-container">
+                     Check this box to indicate that you have read and agree to our Privacy Policy, outlining how we handle your data.
+                 </div> -->
+                 <br>
+                 <button style="margin-top: -30px;" type="submit" class="btn btn-primary">Sign Up</button>
+             </form>
+         </div>
+     </div>
+ 
+     <!-- Bootstrap JS and Popper.js -->
+     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+ </body>
+ </html>
+ 
+ 

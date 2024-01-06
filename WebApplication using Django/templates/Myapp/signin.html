@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin Page</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+
+        .signin-container {
+            background-color: #ffffff;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h4 {
+            text-align: center;
+            color: #007bff;
+            padding-bottom: 10px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        button {
+            background-color: #007bff;
+            color: #fff;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+
+    <div class="container signin-container">
+        <h4>Sign In To Your Twilight Account</h4>
+        <form action="{% url 'signin' %}" method="post">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="username">Username :</label>
+                <input type="text" class="form-control" id="username" name="username" placeholder="Enter Your Username" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="pass1">Password:</label>
+                <input type="password" class="form-control" id="pass1" name="pass1" placeholder="Enter Your Password" required>
+            </div>
+            
+            <button type="submit" class="btn btn-primary">Sign In </button>
+        </form>
+    </div>
+    <div  style="margin-top: -120px; margin-left: 510px; font-size: 12px;">
+        <span>If you are new here, sign up to log in and explore our platform!</span>
+        <!-- <span><button style="margin-top: -40px; margin-left: -80px;" type="button" class="btn btn-link btn-sm">SignUp</button></span> -->
+        <span><a href="{% url 'signup' %}" >Signup</a></span>
+    </div>
+    <!-- Bootstrap JS and jQuery (optional) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.9/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
